@@ -42,6 +42,7 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
         </p>
       </details>
     </header>
+    <p> 计数器？ </p>
     <script type="module">
       import {WebXRButton} from './js/util/webxr-button.js';
       import {Scene} from './js/render/scenes/scene.js';
@@ -163,12 +164,10 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
         session.addEventListener('end', onSessionEnded);
 
         session.addEventListener('selectstart', onSelectStart);
-        /*
         session.addEventListener('selectend', onSelectEnd);
         // By listening for the 'select' event we can find out when the user has
         // performed some sort of primary input action and respond to it.
         session.addEventListener('select', onSelect);
-        */
 
         session.addEventListener('squeezestart', onSqueezeStart);
         session.addEventListener('squeezeend', onSqueezeEnd);
@@ -219,16 +218,15 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
                 box.scale = [1.0, 1.0, 1.0];
                 box.marked = true;
               }
-              /*
               currently_selected_boxes[i] = box;
+              /*
               box.scale = [1.25, 1.25, 1.25];
-              box.selected = false;
               */
+              box.selected = false;
             }
           }
         }
       }
-      /*
       function onSelectEnd(ev) {
         let i = (ev.inputSource.handedness == "left") ? 0 : 1;
         let currently_selected_box = currently_selected_boxes[i];  
@@ -258,7 +256,6 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
           currently_selected_box.selected = true;
         }
       }
-      */
 
       function onSqueezeStart(ev) {
         console.log("squeezestart " + currently_grabbed_boxes);
