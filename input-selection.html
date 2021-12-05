@@ -149,7 +149,7 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
             requiredFeatures: ['local-floor']
         }).then((session) => {
           xrButton.setSession(session);
-          session.isImmersive = true;
+          session.isImmersive = false;
           onSessionStarted(session);
         });
       }
