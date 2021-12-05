@@ -137,12 +137,15 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
           scene.addNode(boxNode);
         }
 
+        addBox(-1.0, 2.6, -1.3, 1.0, 0.0, 0.0);
+        addBox(0.0, 2.7, -1.5, 0.0, 1.0, 0.0);
+        addBox(1.0, 2.6, -1.3, 0.0, 0.0, 1.0);
+        addBox(-1.0, 2.1, -1.3, 1.0, 0.0, 0.0);
+        addBox(0.0, 2.2, -1.5, 0.0, 1.0, 0.0);
+        addBox(1.0, 2.1, -1.3, 0.0, 0.0, 1.0);
         addBox(-1.0, 1.6, -1.3, 1.0, 0.0, 0.0);
         addBox(0.0, 1.7, -1.5, 0.0, 1.0, 0.0);
         addBox(1.0, 1.6, -1.3, 0.0, 0.0, 1.0);
-        addBox(-1.0, 1.1, -1.3, 1.0, 0.0, 0.0);
-        addBox(0.0, 1.2, -1.5, 0.0, 1.0, 0.0);
-        addBox(1.0, 1.1, -1.3, 0.0, 0.0, 1.0);
       }
 
       function onRequestSession() {
@@ -342,8 +345,8 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
           let node = box.node;
           mat4.identity(node.matrix);
           mat4.translate(node.matrix, node.matrix, box.position);
-          mat4.rotateX(node.matrix, node.matrix, time/1000);
-          mat4.rotateY(node.matrix, node.matrix, time/1500);
+          //mat4.rotateX(node.matrix, node.matrix, time/1000);
+          //mat4.rotateY(node.matrix, node.matrix, time/1500);
           mat4.scale(node.matrix, node.matrix, box.scale);
         }
         //*/
