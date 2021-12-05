@@ -133,6 +133,7 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
             renderPrimitive: boxRenderPrimitive,
             position: [x, y, z],
             scale: [0.5, 0.5, 0.5],
+            marked: false,
           });
           scene.addNode(boxNode);
         }
@@ -208,14 +209,24 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
           // Check to see if the hit result was one of our boxes.
           for (let box of boxes) {
             if (hitResult.node == box.node) {
-              let i = (ev.inputSource.handedness == "left") ? 0 : 1;
+              //let i = (ev.inputSource.handedness == "left") ? 0 : 1;
+              if (box.marked) {
+                box.scale = [0.5, 0.5, 0.5];
+                box.marked = false;
+              } else {
+                box.scale = [1.0, 1.0, 1.0];
+                box.marked = false;
+              }
+              /*
               currently_selected_boxes[i] = box;
               box.scale = [1.25, 1.25, 1.25];
               box.selected = false;
+              */
             }
           }
         }
       }
+      /*
       function onSelectEnd(ev) {
         let i = (ev.inputSource.handedness == "left") ? 0 : 1;
         let currently_selected_box = currently_selected_boxes[i];  
@@ -245,6 +256,7 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
           currently_selected_box.selected = true;
         }
       }
+      */
 
       function onSqueezeStart(ev) {
         console.log("squeezestart " + currently_grabbed_boxes);
