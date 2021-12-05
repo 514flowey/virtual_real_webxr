@@ -76,6 +76,7 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
       let boxes = [];
       let currently_selected_boxes = [null, null];
       let currently_grabbed_boxes = [null, null];
+      let cnt = 0;
 
       function initXR() {
         xrButton = new WebXRButton({
@@ -156,6 +157,7 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
       }
 
       function onSessionStarted(session) {
+        console.log("into init.");
         session.addEventListener('end', onSessionEnded);
 
         session.addEventListener('selectstart', onSelectStart);
@@ -209,9 +211,11 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
               if (box.marked == true) {
                 box.marked = false;
                 box.scale = [0.5, 0.5, 0.5];
+                cnt = cnt - 1;
               } else {
                 box.marked = true;
                 box.scale = [1.0, 1.0, 1.0];
+                cnt = cnt + 1;
               }
               //currently_selected_boxes[i] = box;
               //box.scale = [1.25, 1.25, 1.25];
@@ -352,6 +356,10 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
           //mat4.rotateY(node.matrix, node.matrix, time/1500);
           mat4.scale(node.matrix, node.matrix, box.scale);
         }
+        document.write(cnt);
+
+        strrr = "dfajskdlfjasdlfjksld";
+        document.write(str);
 
         // In this sample and most samples after it we'll use a helper function
         // to automatically add the right meshes for the session's input sources
