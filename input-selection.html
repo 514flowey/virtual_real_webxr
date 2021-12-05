@@ -135,15 +135,15 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
           scene.addNode(boxNode);
         }
 
-        addBox(-1.0, 2.7, -2.1, 0.0, 1.0, 0.0);
-        addBox(0.0, 2.7, -2.2, 0.0, 1.0, 0.0);
-        addBox(1.0, 2.7, -2.1, 0.0, 1.0, 0.0);
-        addBox(-1.0, 2.1, -2.1, 0.0, 1.0, 0.0);
-        addBox(0.0, 2.1, -2.2, 0.0, 1.0, 0.0);
-        addBox(1.0, 2.1, -2.1, 0.0, 1.0, 0.0);
-        addBox(-1.0, 1.5, -2.1, 0.0, 1.0, 0.0);
-        addBox(0.0, 1.5, -2.2, 0.0, 1.0, 0.0);
-        addBox(1,0, 1.5, -2.2, 0.0, 1.0, 0.0);
+        addBox(-1.0, 2.7, -1.3, 0.0, 1.0, 0.0);
+        addBox(0.0, 2.7, -1.3, 0.0, 1.0, 0.0);
+        addBox(1.0, 2.7, -1.3, 0.0, 1.0, 0.0);
+        addBox(-1.0, 2.1, -1.3, 0.0, 1.0, 0.0);
+        addBox(0.0, 2.1, -1.3, 0.0, 1.0, 0.0);
+        addBox(1.0, 2.1, -1.3, 0.0, 1.0, 0.0);
+        addBox(-1.0, 1.5, -1.3, 0.0, 1.0, 0.0);
+        addBox(0.0, 1.5, -1.3, 0.0, 1.0, 0.0);
+        addBox(1,0, 1.5, -1.3, 0.0, 1.0, 0.0);
       }
 
       function onRequestSession() {
@@ -207,8 +207,15 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
           for (let box of boxes) {
             if (hitResult.node == box.node) {
               let i = (ev.inputSource.handedness == "left") ? 0 : 1;
+              if (box.marked == true) {
+                box.marked = false;
+                box.scale = [0.5, 0.5, 0.5];
+              } else {
+                box.marked = true;
+                box.scale = [1.0, 1.0, 1.0];
+              }
               currently_selected_boxes[i] = box;
-              box.scale = [1.25, 1.25, 1.25];
+              //box.scale = [1.25, 1.25, 1.25];
               box.selected = false;
             }
           }
