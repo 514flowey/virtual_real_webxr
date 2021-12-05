@@ -163,10 +163,12 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
         session.addEventListener('end', onSessionEnded);
 
         session.addEventListener('selectstart', onSelectStart);
+        /*
         session.addEventListener('selectend', onSelectEnd);
         // By listening for the 'select' event we can find out when the user has
         // performed some sort of primary input action and respond to it.
         session.addEventListener('select', onSelect);
+        */
 
         session.addEventListener('squeezestart', onSqueezeStart);
         session.addEventListener('squeezeend', onSqueezeEnd);
