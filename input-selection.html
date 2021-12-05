@@ -37,6 +37,7 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
           XRInputSources to create clickable objects in the scene.
           <a class="back" href="./">Back</a>
         </p>
+        <div id="div-cnt"></div>
       </details>
     </header>
     <div class="back">计数器</div>
@@ -356,10 +357,7 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
           //mat4.rotateY(node.matrix, node.matrix, time/1500);
           mat4.scale(node.matrix, node.matrix, box.scale);
         }
-        document.write(cnt);
-
-        strrr = "dfajskdlfjasdlfjksld";
-        document.write(str);
+        document.getElementById("div-cnt").innerHTML = cnt;
 
         // In this sample and most samples after it we'll use a helper function
         // to automatically add the right meshes for the session's input sources
