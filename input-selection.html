@@ -132,12 +132,12 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
             node: boxNode,
             renderPrimitive: boxRenderPrimitive,
             position: [x, y, z],
-            scale: [0.5, 0.5, 0.5],
+            scale: [1.0, 1.0, 1.0],
           });
           scene.addNode(boxNode);
         }
 
-        addBox(-1.0, 1.6, -1.3, 1.0, 0.0, 0.0);
+        addBox(-1.0, 1.6, -1.3, 0.0, 1.0, 0.0);
         addBox(0.0, 1.7, -1.5, 0.0, 1.0, 0.0);
         addBox(1.0, 1.6, -1.3, 0.0, 0.0, 1.0);
       }
