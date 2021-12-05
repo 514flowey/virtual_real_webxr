@@ -42,7 +42,6 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
         </p>
       </details>
     </header>
-    <p> 计数器？ </p>
     <script type="module">
       import {WebXRButton} from './js/util/webxr-button.js';
       import {Scene} from './js/render/scenes/scene.js';
@@ -218,6 +217,7 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
                 box.scale = [1.0, 1.0, 1.0];
                 box.marked = true;
               }
+              console.log("selected succeed");
               currently_selected_boxes[i] = box;
               /*
               box.scale = [1.25, 1.25, 1.25];
@@ -376,5 +376,6 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
       // Start the XR application.
       initXR();
     </script>
+    <p> 计数器？ </p>
   </body>
 </html>
